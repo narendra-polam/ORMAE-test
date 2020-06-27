@@ -3,7 +3,7 @@
 ****Data****:  Assuming data from MQTT device. 
 
 ****Requirement****:
-1) Nodejs - version 10+	-> Rest API to store live data into database
+1) Nodejs -> Server Environment
 2) ExpressJs -> Web Application Framework
 3) Mongodb -> Database
 4) MQTT -> Real time data device
@@ -17,7 +17,7 @@
 
 *Step3:*  At the end of step2 will update data into **MongoDB** for convenience to show in `dashboard`
 
-*Step4:*  At the end of the day all storage files will zip and move into S3 storage (`ToDo` test and train data) based on vehicle Unique_id.
+*Step4:*  At the end of the day all storage files will zip and move into S3 storage (`ToDo` test and train data) based on vehicle Unique_id and flush the local storage data.
 
 **Case 1 :  vehicle continuously moving**
 Each and every time we are getting vehicle GEO location and write into file. So we can compare the data and will udpate status into MongoDb is **Active**.
@@ -63,8 +63,4 @@ Note: Here `mynodejs` is docker image name. Code repo exposed to `4545` port
 
 ****3) ******What kind of tests could be integrated in the CI/CD pipeline**********: 
 
-` Integration test` : Integration tests verify that different modules or services used by your application work well together. For example, it can be testing the interaction with the database or making sure that microservices work together as expected. These types of tests are more expensive to run as they require multiple parts of the application to be up and running.
-
-`Smoke testing` : Smoke tests are basic tests that check basic functionality of the application. They are meant to be quick to execute, and their goal is to give you the assurance that the major features of your system are working as expected.
-
-`Acceptance testing` : Acceptance tests are formal tests executed to verify if a system satisfies its business requirements. They require the entire application to be up and running and focus on replicating user behaviors. But they can also go further and measure the performance of the system and reject changes if certain goals are not met.
+` Jenkins` : Jenkins is an open source tool which is used for continuous integration. It’s free to use and jobs can be configured both by the interface as well as scripts.

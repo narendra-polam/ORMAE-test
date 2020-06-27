@@ -12,8 +12,11 @@
 # Project Implementation 
 
 *Step1:*  Connect MQTT server and subscribe the topic.
+
 *Step2:* From topic will receive the data and stored into file, based on vehicle unique_id.
+
 *Step3:*  At the end of step2 will update data into **MongoDB** for convenience to show in `dashboard`
+
 *Step4:*  At the end of the day all storage files will zip and move into S3 storage (`ToDo` test and train data) based on vehicle Unique_id.
 
 **Case 1 :  vehicle continuously moving**
